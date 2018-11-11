@@ -1,0 +1,16 @@
+[
+{
+  "modid": "vanillalife",
+  "name": "Vanilla Life",
+  "description": "Adds stuff that should already be in vanilla and obsidian pickaxes that break bedrock",
+  "version": "1.2.6",
+  "mcversion": "1.12.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["jredfox"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
