@@ -31,6 +31,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.oredict.OreDictionary;
 
 
 @Mod(modid=MainJava.modid, name=MainJava.name, version=MainJava.version, dependencies = "required-after:evilnotchlib@[1.2.3]")
@@ -94,6 +95,8 @@ public class MainJava
   public void preInit(FMLPreInitializationEvent event)
   {
 	Config.loadconfig(event);//Gets Values From User For Armor/Tools
+	
+	OreDictionary.registerOre("bedrock", Blocks.BEDROCK);
 	
 	ToolMat obsidian_material = new ToolMat(new ResourceLocation(modid + ":obsidian_tool"), 4,6500,8.0f,5.0f,13);
 	ToolMat bedrock_material =  new ToolMat(new ResourceLocation(modid + ":bedrock_tool"), 5,25000,14.0f,7.0f,11);
