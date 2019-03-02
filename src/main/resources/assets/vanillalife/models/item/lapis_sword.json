@@ -1,1 +1,6 @@
-{"parent":"item/handheld","textures":{"layer0":"vanillalife:items/lapis_sword"}}
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "vanillalife:items/lapis_sword"
+  }
+}

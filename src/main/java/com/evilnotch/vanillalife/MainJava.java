@@ -1,17 +1,17 @@
 package com.evilnotch.vanillalife;
 
-import com.evilnotch.lib.minecraft.content.item.armor.ArmorMat;
-import com.evilnotch.lib.minecraft.content.item.armor.ArmorSet;
-import com.evilnotch.lib.minecraft.content.item.armor.BasicArmor;
-import com.evilnotch.lib.minecraft.content.item.armor.PotionArmor;
-import com.evilnotch.lib.minecraft.content.item.tool.ItemBasicAxe;
-import com.evilnotch.lib.minecraft.content.item.tool.ItemBasicHoe;
-import com.evilnotch.lib.minecraft.content.item.tool.ItemBasicPickaxe;
-import com.evilnotch.lib.minecraft.content.item.tool.ItemBasicSpade;
-import com.evilnotch.lib.minecraft.content.item.tool.ItemBasicSword;
-import com.evilnotch.lib.minecraft.content.item.tool.ToolMat;
-import com.evilnotch.lib.minecraft.content.item.tool.ToolSet;
-import com.evilnotch.lib.minecraft.content.lang.LangEntry;
+import com.evilnotch.lib.minecraft.basicmc.auto.item.ArmorMat;
+import com.evilnotch.lib.minecraft.basicmc.auto.item.ArmorSet;
+import com.evilnotch.lib.minecraft.basicmc.auto.item.ToolMat;
+import com.evilnotch.lib.minecraft.basicmc.auto.item.ToolSet;
+import com.evilnotch.lib.minecraft.basicmc.auto.lang.LangEntry;
+import com.evilnotch.lib.minecraft.basicmc.item.armor.BasicArmor;
+import com.evilnotch.lib.minecraft.basicmc.item.armor.BasicPotionArmor;
+import com.evilnotch.lib.minecraft.basicmc.item.tool.ItemBasicAxe;
+import com.evilnotch.lib.minecraft.basicmc.item.tool.ItemBasicHoe;
+import com.evilnotch.lib.minecraft.basicmc.item.tool.ItemBasicPickaxe;
+import com.evilnotch.lib.minecraft.basicmc.item.tool.ItemBasicSpade;
+import com.evilnotch.lib.minecraft.basicmc.item.tool.ItemBasicSword;
 
 import net.minecraft.block.BlockEndPortalFrame;
 import net.minecraft.creativetab.CreativeTabs;
@@ -38,7 +38,7 @@ public class MainJava
 {
   public static final String modid = "vanillalife";
   public static final String name = "Vanilla Life";
-  public static final String version = "1.2.7";
+  public static final String version = "1.2.8";
   
   public static Item opic;
   public static Item oaxe;
@@ -109,77 +109,77 @@ public class MainJava
 	ArmorMat dirt_armor_material = new ArmorMat(new ResourceLocation(modid + ":" + "dirt_armor"), new ResourceLocation(modid + ":dirt"), 3, new int[]{1, 2, 1, 1}, 1, (SoundEvent)null, 0f);
 	
 	//tools
-	opic = new ItemBasicPickaxe(obsidian_material,new ResourceLocation(modid + ":" + "obsidian_pickaxe"),CreativeTabs.TOOLS,new LangEntry("Obsidian Pickaxe","en_us"));
-	oaxe = new ItemBasicAxe(obsidian_material,new ResourceLocation(modid + ":" + "obsidian_axe"),CreativeTabs.TOOLS,new LangEntry("Obsidian Axe","en_us"));
-	osword = new ItemBasicSword(obsidian_material,new ResourceLocation(modid + ":" + "obsidian_sword"),CreativeTabs.TOOLS,new LangEntry("Obsidian Sword","en_us"));
-	ospade = new ItemBasicSpade(obsidian_material,new ResourceLocation(modid + ":" + "obsidian_spade"),CreativeTabs.TOOLS,new LangEntry("Obsidian Shovel","en_us"));
-	ohoe = new ItemBasicHoe(obsidian_material,new ResourceLocation(modid + ":" + "obsidian_hoe"),CreativeTabs.TOOLS,new LangEntry("Obsidian Hoe","en_us"));
+	opic = new ItemBasicPickaxe(new ResourceLocation(modid + ":" + "obsidian_pickaxe"), obsidian_material, CreativeTabs.TOOLS, new LangEntry("en_us","Obsidian Pickaxe"));
+	oaxe = new ItemBasicAxe(new ResourceLocation(modid + ":" + "obsidian_axe"), obsidian_material, CreativeTabs.TOOLS,new LangEntry("en_us","Obsidian Axe"));
+	osword = new ItemBasicSword(new ResourceLocation(modid + ":" + "obsidian_sword"), obsidian_material, CreativeTabs.TOOLS,new LangEntry("en_us","Obsidian Sword"));
+	ospade = new ItemBasicSpade(new ResourceLocation(modid + ":" + "obsidian_spade"),obsidian_material,CreativeTabs.TOOLS,new LangEntry("en_us","Obsidian Shovel"));
+	ohoe = new ItemBasicHoe(new ResourceLocation(modid + ":" + "obsidian_hoe"),obsidian_material,CreativeTabs.TOOLS,new LangEntry("en_us","Obsidian Hoe"));
 	new ToolSet(opic,oaxe,osword,ospade,ohoe,new ItemStack(Blocks.OBSIDIAN),new ItemStack(Items.STICK),false,false);
 	
-	bedrockpic = new ItemBasicPickaxe(bedrock_material,new ResourceLocation(modid + ":" + "bedrock_pickaxe"),CreativeTabs.TOOLS,new LangEntry("Bedrock Pickaxe","en_us"));
-	bedrockaxe = new ItemBasicAxe(bedrock_material,new ResourceLocation(modid + ":" + "bedrock_axe"),CreativeTabs.TOOLS,new LangEntry("Bedrock Axe","en_us"));
-	bedrocksword = new ItemBasicSword(bedrock_material,new ResourceLocation(modid + ":" + "bedrock_sword"),CreativeTabs.TOOLS,new LangEntry("Bedrock Sword","en_us"));
-	bedrockspade = new ItemBasicSpade(bedrock_material,new ResourceLocation(modid + ":" + "bedrock_spade"),CreativeTabs.TOOLS,new LangEntry("Bedrock Shovel","en_us"));
-	bedrockhoe = new ItemBasicHoe(bedrock_material,new ResourceLocation(modid + ":" + "bedrock_hoe"),CreativeTabs.TOOLS,new LangEntry("Bedrock Hoe","en_us"));
+	bedrockpic = new ItemBasicPickaxe(new ResourceLocation(modid + ":" + "bedrock_pickaxe"),bedrock_material,CreativeTabs.TOOLS,new LangEntry("en_us","Bedrock Pickaxe"));
+	bedrockaxe = new ItemBasicAxe(new ResourceLocation(modid + ":" + "bedrock_axe"),bedrock_material,CreativeTabs.TOOLS,new LangEntry("en_us","Bedrock Axe"));
+	bedrocksword = new ItemBasicSword(new ResourceLocation(modid + ":" + "bedrock_sword"),bedrock_material,CreativeTabs.TOOLS,new LangEntry("en_us","Bedrock Sword"));
+	bedrockspade = new ItemBasicSpade(new ResourceLocation(modid + ":" + "bedrock_spade"),bedrock_material,CreativeTabs.TOOLS,new LangEntry("en_us","Bedrock Shovel"));
+	bedrockhoe = new ItemBasicHoe(new ResourceLocation(modid + ":" + "bedrock_hoe"),bedrock_material,CreativeTabs.TOOLS,new LangEntry("en_us","Bedrock Hoe"));
 	new ToolSet(bedrockpic,bedrockaxe,bedrocksword,bedrockspade,bedrockhoe,new ItemStack(Blocks.BEDROCK),new ItemStack(Items.STICK),false,false);
 	    
-	redstonepic = new ItemBasicPickaxe(redstone_material,new ResourceLocation(modid + ":" + "redstone_pickaxe"),CreativeTabs.TOOLS,new LangEntry("Redstone Pickaxe","en_us"));
-	redstoneaxe = new ItemBasicAxe(redstone_material,new ResourceLocation(modid + ":" + "redstone_axe"),CreativeTabs.TOOLS,new LangEntry("Redstone Axe","en_us"));
-	redstone_sword = new ItemBasicSword(redstone_material,new ResourceLocation(modid + ":" + "redstone_sword"),CreativeTabs.TOOLS,new LangEntry("Redstone Sword","en_us"));
-	redstoneshovel = new ItemBasicSpade(redstone_material,new ResourceLocation(modid + ":" + "redstone_spade"),CreativeTabs.TOOLS,new LangEntry("Redstone Shovel","en_us"));
-	redstonehoe = new ItemBasicHoe(redstone_material,new ResourceLocation(modid + ":" + "redstone_hoe"),CreativeTabs.TOOLS,new LangEntry("Redstone Hoe","en_us"));
+	redstonepic = new ItemBasicPickaxe(new ResourceLocation(modid + ":" + "redstone_pickaxe"),redstone_material,CreativeTabs.TOOLS,new LangEntry("en_us","Redstone Pickaxe"));
+	redstoneaxe = new ItemBasicAxe(new ResourceLocation(modid + ":" + "redstone_axe"),redstone_material,CreativeTabs.TOOLS,new LangEntry("en_us","Redstone Axe"));
+	redstone_sword = new ItemBasicSword(new ResourceLocation(modid + ":" + "redstone_sword"),redstone_material,CreativeTabs.TOOLS,new LangEntry("en_us","Redstone Sword"));
+	redstoneshovel = new ItemBasicSpade(new ResourceLocation(modid + ":" + "redstone_spade"),redstone_material,CreativeTabs.TOOLS,new LangEntry("en_us","Redstone Shovel"));
+	redstonehoe = new ItemBasicHoe(new ResourceLocation(modid + ":" + "redstone_hoe"),redstone_material,CreativeTabs.TOOLS,new LangEntry("en_us","Redstone Hoe"));
 	new ToolSet(redstonepic,redstoneaxe,redstone_sword,redstoneshovel,redstonehoe,new ItemStack(Blocks.REDSTONE_BLOCK),new ItemStack(Items.STICK),false,false);
 	   
-	lapispic = new ItemBasicPickaxe(lapis_material,new ResourceLocation(modid + ":" + "lapis_pickaxe"),CreativeTabs.TOOLS,new LangEntry("Lapis Pickaxe","en_us"));
-	lapisaxe = new ItemBasicAxe(lapis_material,new ResourceLocation(modid + ":" + "lapis_axe"),CreativeTabs.TOOLS,new LangEntry("Lapis Axe","en_us"));
-	lapis_sword = new ItemBasicSword(lapis_material,new ResourceLocation(modid + ":" + "lapis_sword"),CreativeTabs.TOOLS,new LangEntry("Lapis Sword","en_us"));
-	lapis_shovel = new ItemBasicSpade(lapis_material,new ResourceLocation(modid + ":" + "lapis_spade"),CreativeTabs.TOOLS,new LangEntry("Lapis Shovel","en_us"));
-	lapishoe = new ItemBasicHoe(lapis_material,new ResourceLocation(modid + ":" + "lapis_hoe"),CreativeTabs.TOOLS,new LangEntry("Lapis Hoe","en_us"));
+	lapispic = new ItemBasicPickaxe(new ResourceLocation(modid + ":" + "lapis_pickaxe"),lapis_material,CreativeTabs.TOOLS,new LangEntry("en_us","Lapis Pickaxe"));
+	lapisaxe = new ItemBasicAxe(new ResourceLocation(modid + ":" + "lapis_axe"),lapis_material,CreativeTabs.TOOLS,new LangEntry("en_us","Lapis Axe"));
+	lapis_sword = new ItemBasicSword(new ResourceLocation(modid + ":" + "lapis_sword"),lapis_material,CreativeTabs.TOOLS,new LangEntry("en_us","Lapis Sword"));
+	lapis_shovel = new ItemBasicSpade(new ResourceLocation(modid + ":" + "lapis_spade"),lapis_material,CreativeTabs.TOOLS,new LangEntry("en_us","Lapis Shovel"));
+	lapishoe = new ItemBasicHoe(new ResourceLocation(modid + ":" + "lapis_hoe"),lapis_material,CreativeTabs.TOOLS,new LangEntry("en_us", "Lapis Hoe"));
 	new ToolSet(lapispic,lapisaxe,lapis_sword,lapis_shovel,lapishoe,new ItemStack(Blocks.LAPIS_BLOCK),new ItemStack(Items.STICK),false,false);
 	  
-	quartzpic = new ItemBasicPickaxe(quartz_material,new ResourceLocation(modid + ":" + "quartz_pickaxe"),CreativeTabs.TOOLS,new LangEntry("Quartz Pickaxe","en_us"));
-	quartzaxe = new ItemBasicAxe(quartz_material,new ResourceLocation(modid + ":" + "quartz_axe"),CreativeTabs.TOOLS,new LangEntry("Quartz Axe","en_us"));
-	quartzsword = new ItemBasicSword(quartz_material,new ResourceLocation(modid + ":" + "quartz_sword"),CreativeTabs.TOOLS,new LangEntry("Quartz Sword","en_us"));
-	quartzshovel = new ItemBasicSpade(quartz_material,new ResourceLocation(modid + ":" + "quartz_spade"),CreativeTabs.TOOLS,new LangEntry("Quartz Shovel","en_us"));
-	quartzhoe = new ItemBasicHoe(quartz_material,new ResourceLocation(modid + ":" + "quartz_hoe"),CreativeTabs.TOOLS,new LangEntry("Quartz Hoe","en_us"));
+	quartzpic = new ItemBasicPickaxe(new ResourceLocation(modid + ":" + "quartz_pickaxe"),quartz_material,CreativeTabs.TOOLS,new LangEntry("en_us", "Quartz Pickaxe"));
+	quartzaxe = new ItemBasicAxe(new ResourceLocation(modid + ":" + "quartz_axe"),quartz_material,CreativeTabs.TOOLS,new LangEntry("en_us","Quartz Axe"));
+	quartzsword = new ItemBasicSword(new ResourceLocation(modid + ":" + "quartz_sword"),quartz_material,CreativeTabs.TOOLS,new LangEntry("en_us","Quartz Sword"));
+	quartzshovel = new ItemBasicSpade(new ResourceLocation(modid + ":" + "quartz_spade"),quartz_material,CreativeTabs.TOOLS,new LangEntry("en_us","Quartz Shovel"));
+	quartzhoe = new ItemBasicHoe(new ResourceLocation(modid + ":" + "quartz_hoe"),quartz_material,CreativeTabs.TOOLS,new LangEntry("en_us","Quartz Hoe"));
 	new ToolSet(quartzpic,quartzaxe,quartzsword,quartzshovel,quartzhoe,new ItemStack(Blocks.QUARTZ_BLOCK),new ItemStack(Items.STICK),true,false);
 	
 	//armor
-	oh = new PotionArmor(obsidian_armor_material, new ResourceLocation(modid + ":" + "obsidian_helmet"), 0, EntityEquipmentSlot.HEAD,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("Obsidian Helmet","en_us"));
-    oc = new PotionArmor(obsidian_armor_material, new ResourceLocation(modid + ":" + "obsidian_chestplate"), 0, EntityEquipmentSlot.CHEST,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("Obsidian Chestplate","en_us"));
-    ol = new PotionArmor(obsidian_armor_material, new ResourceLocation(modid + ":" + "obsidian_leggings"), 0, EntityEquipmentSlot.LEGS,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("Obsidian Leggings","en_us"));
-    ob = new PotionArmor(obsidian_armor_material, new ResourceLocation(modid + ":" + "obsidian_boots"), 0, EntityEquipmentSlot.FEET,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("Obsidian Boots","en_us"));
+	oh = new BasicPotionArmor(new ResourceLocation(modid + ":" + "obsidian_helmet"), obsidian_armor_material, 0, EntityEquipmentSlot.HEAD,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("en_us","Obsidian Helmet"));
+    oc = new BasicPotionArmor(new ResourceLocation(modid + ":" + "obsidian_chestplate"), obsidian_armor_material, 0, EntityEquipmentSlot.CHEST,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("en_us","Obsidian Chestplate"));
+    ol = new BasicPotionArmor(new ResourceLocation(modid + ":" + "obsidian_leggings"), obsidian_armor_material, 0, EntityEquipmentSlot.LEGS,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("en_us","Obsidian Leggings"));
+    ob = new BasicPotionArmor(new ResourceLocation(modid + ":" + "obsidian_boots"), obsidian_armor_material, 0, EntityEquipmentSlot.FEET,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("en_us","Obsidian Boots"));
     new ArmorSet(oh,oc,ol,ob,new ItemStack(Blocks.OBSIDIAN),false);
 	
-	bh = new PotionArmor(bedrock_armor_material, new ResourceLocation(modid + ":" + "bedrock_helmet"), 0, EntityEquipmentSlot.HEAD,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("Bedrock Helmet","en_us"));
-	bc = new PotionArmor(bedrock_armor_material, new ResourceLocation(modid + ":" + "bedrock_chestplate"), 0, EntityEquipmentSlot.CHEST,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("Bedrock Chestplate","en_us"));
-	bl = new PotionArmor(bedrock_armor_material, new ResourceLocation(modid + ":" + "bedrock_leggings"), 0, EntityEquipmentSlot.LEGS,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("Bedrock Leggings","en_us"));
-	bb = new PotionArmor(bedrock_armor_material, new ResourceLocation(modid + ":" + "bedrock_boots"), 0, EntityEquipmentSlot.FEET,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("Bedrock Boots","en_us"));
+	bh = new BasicPotionArmor(new ResourceLocation(modid + ":" + "bedrock_helmet"), bedrock_armor_material, 0, EntityEquipmentSlot.HEAD,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("en_us","Bedrock Helmet"));
+	bc = new BasicPotionArmor(new ResourceLocation(modid + ":" + "bedrock_chestplate"),bedrock_armor_material, 0, EntityEquipmentSlot.CHEST,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("en_us", "Bedrock Chestplate"));
+	bl = new BasicPotionArmor(new ResourceLocation(modid + ":" + "bedrock_leggings"),bedrock_armor_material, 0, EntityEquipmentSlot.LEGS,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("en_us", "Bedrock Leggings"));
+	bb = new BasicPotionArmor(new ResourceLocation(modid + ":" + "bedrock_boots"),bedrock_armor_material, 0, EntityEquipmentSlot.FEET,new PotionEffect(Potion.getPotionFromResourceLocation("minecraft:fire_resistance")),CreativeTabs.COMBAT,new LangEntry("en_us", "Bedrock Boots"));
 	new ArmorSet(bh,bc,bl,bb,new ItemStack(Blocks.BEDROCK),false);
 	
-	rh = new BasicArmor(redstone_armor_material, new ResourceLocation(modid + ":" + "redstone_helmet"), 0, EntityEquipmentSlot.HEAD,CreativeTabs.COMBAT,new LangEntry("Redstone Helmet","en_us"));
-	rc = new BasicArmor(redstone_armor_material, new ResourceLocation(modid + ":" + "redstone_chestplate"), 0, EntityEquipmentSlot.CHEST,CreativeTabs.COMBAT,new LangEntry("Redstone Boots","en_us"));
-	rl = new BasicArmor(redstone_armor_material, new ResourceLocation(modid + ":" + "redstone_leggings"), 0, EntityEquipmentSlot.LEGS,CreativeTabs.COMBAT,new LangEntry("Redstone Leggings","en_us"));
-	rb = new BasicArmor(redstone_armor_material, new ResourceLocation(modid + ":" + "redstone_boots"), 0, EntityEquipmentSlot.FEET,CreativeTabs.COMBAT,new LangEntry("Redstone Boots","en_us"));
+	rh = new BasicArmor(new ResourceLocation(modid + ":" + "redstone_helmet"),redstone_armor_material, 0, EntityEquipmentSlot.HEAD,CreativeTabs.COMBAT,new LangEntry("en_us","Redstone Helmet"));
+	rc = new BasicArmor(new ResourceLocation(modid + ":" + "redstone_chestplate"),redstone_armor_material, 0, EntityEquipmentSlot.CHEST,CreativeTabs.COMBAT,new LangEntry("en_us","Redstone Boots"));
+	rl = new BasicArmor(new ResourceLocation(modid + ":" + "redstone_leggings"),redstone_armor_material, 0, EntityEquipmentSlot.LEGS,CreativeTabs.COMBAT,new LangEntry("en_us","Redstone Leggings"));
+	rb = new BasicArmor(new ResourceLocation(modid + ":" + "redstone_boots"),redstone_armor_material, 0, EntityEquipmentSlot.FEET,CreativeTabs.COMBAT,new LangEntry("en_us","Redstone Boots"));
 	new ArmorSet(rh,rc,rl,rb,new ItemStack(Blocks.REDSTONE_BLOCK),false);
 	   
-	lh = new BasicArmor(lapis_amror_material, new ResourceLocation(modid + ":" + "lapis_helmet"), 0, EntityEquipmentSlot.HEAD,CreativeTabs.COMBAT,new LangEntry("Lapis Helmet","en_us"));
-	lc = new BasicArmor(lapis_amror_material, new ResourceLocation(modid + ":" + "lapis_chestplate"), 0, EntityEquipmentSlot.CHEST,CreativeTabs.COMBAT,new LangEntry("Lapis Chestplate","en_us"));
-	ll = new BasicArmor(lapis_amror_material, new ResourceLocation(modid + ":" + "lapis_leggings"), 0, EntityEquipmentSlot.LEGS,CreativeTabs.COMBAT,new LangEntry("Lapis Leggings","en_us"));
-	lb = new BasicArmor(lapis_amror_material, new ResourceLocation(modid + ":" + "lapis_boots"), 0, EntityEquipmentSlot.FEET,CreativeTabs.COMBAT,new LangEntry("Lapis Boots","en_us"));
+	lh = new BasicArmor(new ResourceLocation(modid + ":" + "lapis_helmet"),lapis_amror_material, 0, EntityEquipmentSlot.HEAD,CreativeTabs.COMBAT,new LangEntry("en_us","Lapis Helmet"));
+	lc = new BasicArmor(new ResourceLocation(modid + ":" + "lapis_chestplate"),lapis_amror_material, 0, EntityEquipmentSlot.CHEST,CreativeTabs.COMBAT,new LangEntry("en_us","Lapis Chestplate"));
+	ll = new BasicArmor(new ResourceLocation(modid + ":" + "lapis_leggings"),lapis_amror_material, 0, EntityEquipmentSlot.LEGS,CreativeTabs.COMBAT,new LangEntry("en_us","Lapis Leggings"));
+	lb = new BasicArmor(new ResourceLocation(modid + ":" + "lapis_boots"),lapis_amror_material, 0, EntityEquipmentSlot.FEET,CreativeTabs.COMBAT,new LangEntry("en_us","Lapis Boots"));
 	new ArmorSet(lh,lc,ll,lb,new ItemStack(Blocks.LAPIS_BLOCK),false);
 	    
-	qh = new BasicArmor(quartz_armor_material, new ResourceLocation(modid + ":" + "quartz_helmet"), 0, EntityEquipmentSlot.HEAD,CreativeTabs.COMBAT,new LangEntry("Quartz Helmet","en_us"));
-	qc = new BasicArmor(quartz_armor_material, new ResourceLocation(modid + ":" + "quartz_chestplate"), 0, EntityEquipmentSlot.CHEST,CreativeTabs.COMBAT,new LangEntry("Quartz Chestplate","en_us"));
-	ql = new BasicArmor(quartz_armor_material, new ResourceLocation(modid + ":" + "quartz_leggings"), 0, EntityEquipmentSlot.LEGS,CreativeTabs.COMBAT,new LangEntry("Quartz Leggings","en_us"));
-	qb = new BasicArmor(quartz_armor_material, new ResourceLocation(modid + ":" + "quartz_boots"), 0, EntityEquipmentSlot.FEET,CreativeTabs.COMBAT,new LangEntry("Quartz Boots","en_us"));
+	qh = new BasicArmor(new ResourceLocation(modid + ":" + "quartz_helmet"),  quartz_armor_material, 0, EntityEquipmentSlot.HEAD,CreativeTabs.COMBAT,new LangEntry("en_us","Quartz Helmet"));
+	qc = new BasicArmor(new ResourceLocation(modid + ":" + "quartz_chestplate"), quartz_armor_material, 0, EntityEquipmentSlot.CHEST,CreativeTabs.COMBAT,new LangEntry("en_us","Quartz Chestplate"));
+	ql = new BasicArmor(new ResourceLocation(modid + ":" + "quartz_leggings"), quartz_armor_material, 0, EntityEquipmentSlot.LEGS,CreativeTabs.COMBAT,new LangEntry("en_us","Quartz Leggings"));
+	qb = new BasicArmor(new ResourceLocation(modid + ":" + "quartz_boots"),quartz_armor_material, 0, EntityEquipmentSlot.FEET,CreativeTabs.COMBAT,new LangEntry("en_us","Quartz Boots"));
 	new ArmorSet(qh,qc,ql,qb,new ItemStack(Blocks.QUARTZ_BLOCK),true);
 	    
-	dh = new BasicArmor(dirt_armor_material, new ResourceLocation(modid + ":" + "dirt_helmet"), 0, EntityEquipmentSlot.HEAD,CreativeTabs.COMBAT,new LangEntry("Dirt Helmet","en_us"));
-	dc = new BasicArmor(dirt_armor_material, new ResourceLocation(modid + ":" + "dirt_chestplate"), 0, EntityEquipmentSlot.CHEST,CreativeTabs.COMBAT,new LangEntry("Dirt Chestplate","en_us"));
-	dl = new BasicArmor(dirt_armor_material, new ResourceLocation(modid + ":" + "dirt_leggings"), 0, EntityEquipmentSlot.LEGS,CreativeTabs.COMBAT,new LangEntry("Dirt Leggings","en_us"));
-	db = new BasicArmor(dirt_armor_material, new ResourceLocation(modid + ":" + "dirt_boots"), 0, EntityEquipmentSlot.FEET,CreativeTabs.COMBAT,new LangEntry("Dirt Boots","en_us"));
-	new ArmorSet(dh,dc,dl,db,new ItemStack(Blocks.DIRT),true);
+	dh = new BasicArmor(new ResourceLocation(modid + ":" + "dirt_helmet"),dirt_armor_material, 0, EntityEquipmentSlot.HEAD,CreativeTabs.COMBAT,new LangEntry("en_us","Dirt Helmet"));
+	dc = new BasicArmor(new ResourceLocation(modid + ":" + "dirt_chestplate"),dirt_armor_material, 0, EntityEquipmentSlot.CHEST,CreativeTabs.COMBAT,new LangEntry("en_us","Dirt Chestplate"));
+	dl = new BasicArmor(new ResourceLocation(modid + ":" + "dirt_leggings"),dirt_armor_material, 0, EntityEquipmentSlot.LEGS,CreativeTabs.COMBAT,new LangEntry("en_us","Dirt Leggings"));
+	db = new BasicArmor(new ResourceLocation(modid + ":" + "dirt_boots"),dirt_armor_material, 0, EntityEquipmentSlot.FEET,CreativeTabs.COMBAT,new LangEntry("en_us","Dirt Boots"));
+	new ArmorSet(dh, dc, dl, db,new ItemStack(Blocks.DIRT), true);
   }
 
   @Mod.EventHandler
@@ -191,6 +191,7 @@ public class MainJava
       Blocks.END_PORTAL_FRAME.setHarvestLevel("pickaxe", Config.elvl);
       MinecraftForge.EVENT_BUS.register(this);
   }
+  
   @SubscribeEvent
   public void on(BlockEvent.HarvestDropsEvent event)
   {
