@@ -7,11 +7,11 @@ import com.evilnotch.lib.minecraft.basicmc.auto.item.ToolSet;
 import com.evilnotch.lib.minecraft.basicmc.auto.lang.LangEntry;
 import com.evilnotch.lib.minecraft.basicmc.item.armor.BasicArmor;
 import com.evilnotch.lib.minecraft.basicmc.item.armor.BasicPotionArmor;
-import com.evilnotch.lib.minecraft.basicmc.item.tool.ItemBasicAxe;
-import com.evilnotch.lib.minecraft.basicmc.item.tool.ItemBasicHoe;
-import com.evilnotch.lib.minecraft.basicmc.item.tool.ItemBasicPickaxe;
-import com.evilnotch.lib.minecraft.basicmc.item.tool.ItemBasicSpade;
-import com.evilnotch.lib.minecraft.basicmc.item.tool.ItemBasicSword;
+import com.evilnotch.lib.minecraft.basicmc.item.tool.BasicAxe;
+import com.evilnotch.lib.minecraft.basicmc.item.tool.BasicHoe;
+import com.evilnotch.lib.minecraft.basicmc.item.tool.BasicPickaxe;
+import com.evilnotch.lib.minecraft.basicmc.item.tool.BasicSpade;
+import com.evilnotch.lib.minecraft.basicmc.item.tool.BasicSword;
 
 import net.minecraft.block.BlockEndPortalFrame;
 import net.minecraft.creativetab.CreativeTabs;
@@ -33,12 +33,12 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
-@Mod(modid=MainJava.modid, name=MainJava.name, version=MainJava.version, dependencies = "required-after:evilnotchlib@[1.2.3]")
+@Mod(modid=MainJava.modid, name=MainJava.name, version=MainJava.version, dependencies = "required-after:evilnotchlib@[1.2.3,]")
 public class MainJava
 {
   public static final String modid = "vanillalife";
   public static final String name = "Vanilla Life";
-  public static final String version = "1.2.8";
+  public static final String version = "1.2.8.2";
   
   public static Item opic;
   public static Item oaxe;
@@ -109,39 +109,39 @@ public class MainJava
 	ArmorMat dirt_armor_material = new ArmorMat(new ResourceLocation(modid + ":" + "dirt_armor"), new ResourceLocation(modid + ":dirt"), 3, new int[]{1, 2, 1, 1}, 1, (SoundEvent)null, 0f);
 	
 	//tools
-	opic = new ItemBasicPickaxe(new ResourceLocation(modid + ":" + "obsidian_pickaxe"), obsidian_material, CreativeTabs.TOOLS, new LangEntry("en_us","Obsidian Pickaxe"));
-	oaxe = new ItemBasicAxe(new ResourceLocation(modid + ":" + "obsidian_axe"), obsidian_material, CreativeTabs.TOOLS,new LangEntry("en_us","Obsidian Axe"));
-	osword = new ItemBasicSword(new ResourceLocation(modid + ":" + "obsidian_sword"), obsidian_material, CreativeTabs.TOOLS,new LangEntry("en_us","Obsidian Sword"));
-	ospade = new ItemBasicSpade(new ResourceLocation(modid + ":" + "obsidian_spade"),obsidian_material,CreativeTabs.TOOLS,new LangEntry("en_us","Obsidian Shovel"));
-	ohoe = new ItemBasicHoe(new ResourceLocation(modid + ":" + "obsidian_hoe"),obsidian_material,CreativeTabs.TOOLS,new LangEntry("en_us","Obsidian Hoe"));
+	opic = new BasicPickaxe(new ResourceLocation(modid + ":" + "obsidian_pickaxe"), obsidian_material, CreativeTabs.TOOLS, new LangEntry("en_us","Obsidian Pickaxe"));
+	oaxe = new BasicAxe(new ResourceLocation(modid + ":" + "obsidian_axe"), obsidian_material, CreativeTabs.TOOLS,new LangEntry("en_us","Obsidian Axe"));
+	osword = new BasicSword(new ResourceLocation(modid + ":" + "obsidian_sword"), obsidian_material, CreativeTabs.TOOLS,new LangEntry("en_us","Obsidian Sword"));
+	ospade = new BasicSpade(new ResourceLocation(modid + ":" + "obsidian_spade"),obsidian_material,CreativeTabs.TOOLS,new LangEntry("en_us","Obsidian Shovel"));
+	ohoe = new BasicHoe(new ResourceLocation(modid + ":" + "obsidian_hoe"),obsidian_material,CreativeTabs.TOOLS,new LangEntry("en_us","Obsidian Hoe"));
 	new ToolSet(opic,oaxe,osword,ospade,ohoe,new ItemStack(Blocks.OBSIDIAN),new ItemStack(Items.STICK),false,false);
 	
-	bedrockpic = new ItemBasicPickaxe(new ResourceLocation(modid + ":" + "bedrock_pickaxe"),bedrock_material,CreativeTabs.TOOLS,new LangEntry("en_us","Bedrock Pickaxe"));
-	bedrockaxe = new ItemBasicAxe(new ResourceLocation(modid + ":" + "bedrock_axe"),bedrock_material,CreativeTabs.TOOLS,new LangEntry("en_us","Bedrock Axe"));
-	bedrocksword = new ItemBasicSword(new ResourceLocation(modid + ":" + "bedrock_sword"),bedrock_material,CreativeTabs.TOOLS,new LangEntry("en_us","Bedrock Sword"));
-	bedrockspade = new ItemBasicSpade(new ResourceLocation(modid + ":" + "bedrock_spade"),bedrock_material,CreativeTabs.TOOLS,new LangEntry("en_us","Bedrock Shovel"));
-	bedrockhoe = new ItemBasicHoe(new ResourceLocation(modid + ":" + "bedrock_hoe"),bedrock_material,CreativeTabs.TOOLS,new LangEntry("en_us","Bedrock Hoe"));
+	bedrockpic = new BasicPickaxe(new ResourceLocation(modid + ":" + "bedrock_pickaxe"),bedrock_material,CreativeTabs.TOOLS,new LangEntry("en_us","Bedrock Pickaxe"));
+	bedrockaxe = new BasicAxe(new ResourceLocation(modid + ":" + "bedrock_axe"),bedrock_material,CreativeTabs.TOOLS,new LangEntry("en_us","Bedrock Axe"));
+	bedrocksword = new BasicSword(new ResourceLocation(modid + ":" + "bedrock_sword"),bedrock_material,CreativeTabs.TOOLS,new LangEntry("en_us","Bedrock Sword"));
+	bedrockspade = new BasicSpade(new ResourceLocation(modid + ":" + "bedrock_spade"),bedrock_material,CreativeTabs.TOOLS,new LangEntry("en_us","Bedrock Shovel"));
+	bedrockhoe = new BasicHoe(new ResourceLocation(modid + ":" + "bedrock_hoe"),bedrock_material,CreativeTabs.TOOLS,new LangEntry("en_us","Bedrock Hoe"));
 	new ToolSet(bedrockpic,bedrockaxe,bedrocksword,bedrockspade,bedrockhoe,new ItemStack(Blocks.BEDROCK),new ItemStack(Items.STICK),false,false);
 	    
-	redstonepic = new ItemBasicPickaxe(new ResourceLocation(modid + ":" + "redstone_pickaxe"),redstone_material,CreativeTabs.TOOLS,new LangEntry("en_us","Redstone Pickaxe"));
-	redstoneaxe = new ItemBasicAxe(new ResourceLocation(modid + ":" + "redstone_axe"),redstone_material,CreativeTabs.TOOLS,new LangEntry("en_us","Redstone Axe"));
-	redstone_sword = new ItemBasicSword(new ResourceLocation(modid + ":" + "redstone_sword"),redstone_material,CreativeTabs.TOOLS,new LangEntry("en_us","Redstone Sword"));
-	redstoneshovel = new ItemBasicSpade(new ResourceLocation(modid + ":" + "redstone_spade"),redstone_material,CreativeTabs.TOOLS,new LangEntry("en_us","Redstone Shovel"));
-	redstonehoe = new ItemBasicHoe(new ResourceLocation(modid + ":" + "redstone_hoe"),redstone_material,CreativeTabs.TOOLS,new LangEntry("en_us","Redstone Hoe"));
+	redstonepic = new BasicPickaxe(new ResourceLocation(modid + ":" + "redstone_pickaxe"),redstone_material,CreativeTabs.TOOLS,new LangEntry("en_us","Redstone Pickaxe"));
+	redstoneaxe = new BasicAxe(new ResourceLocation(modid + ":" + "redstone_axe"),redstone_material,CreativeTabs.TOOLS,new LangEntry("en_us","Redstone Axe"));
+	redstone_sword = new BasicSword(new ResourceLocation(modid + ":" + "redstone_sword"),redstone_material,CreativeTabs.TOOLS,new LangEntry("en_us","Redstone Sword"));
+	redstoneshovel = new BasicSpade(new ResourceLocation(modid + ":" + "redstone_spade"),redstone_material,CreativeTabs.TOOLS,new LangEntry("en_us","Redstone Shovel"));
+	redstonehoe = new BasicHoe(new ResourceLocation(modid + ":" + "redstone_hoe"),redstone_material,CreativeTabs.TOOLS,new LangEntry("en_us","Redstone Hoe"));
 	new ToolSet(redstonepic,redstoneaxe,redstone_sword,redstoneshovel,redstonehoe,new ItemStack(Blocks.REDSTONE_BLOCK),new ItemStack(Items.STICK),false,false);
 	   
-	lapispic = new ItemBasicPickaxe(new ResourceLocation(modid + ":" + "lapis_pickaxe"),lapis_material,CreativeTabs.TOOLS,new LangEntry("en_us","Lapis Pickaxe"));
-	lapisaxe = new ItemBasicAxe(new ResourceLocation(modid + ":" + "lapis_axe"),lapis_material,CreativeTabs.TOOLS,new LangEntry("en_us","Lapis Axe"));
-	lapis_sword = new ItemBasicSword(new ResourceLocation(modid + ":" + "lapis_sword"),lapis_material,CreativeTabs.TOOLS,new LangEntry("en_us","Lapis Sword"));
-	lapis_shovel = new ItemBasicSpade(new ResourceLocation(modid + ":" + "lapis_spade"),lapis_material,CreativeTabs.TOOLS,new LangEntry("en_us","Lapis Shovel"));
-	lapishoe = new ItemBasicHoe(new ResourceLocation(modid + ":" + "lapis_hoe"),lapis_material,CreativeTabs.TOOLS,new LangEntry("en_us", "Lapis Hoe"));
+	lapispic = new BasicPickaxe(new ResourceLocation(modid + ":" + "lapis_pickaxe"),lapis_material,CreativeTabs.TOOLS,new LangEntry("en_us","Lapis Pickaxe"));
+	lapisaxe = new BasicAxe(new ResourceLocation(modid + ":" + "lapis_axe"),lapis_material,CreativeTabs.TOOLS,new LangEntry("en_us","Lapis Axe"));
+	lapis_sword = new BasicSword(new ResourceLocation(modid + ":" + "lapis_sword"),lapis_material,CreativeTabs.TOOLS,new LangEntry("en_us","Lapis Sword"));
+	lapis_shovel = new BasicSpade(new ResourceLocation(modid + ":" + "lapis_spade"),lapis_material,CreativeTabs.TOOLS,new LangEntry("en_us","Lapis Shovel"));
+	lapishoe = new BasicHoe(new ResourceLocation(modid + ":" + "lapis_hoe"),lapis_material,CreativeTabs.TOOLS,new LangEntry("en_us", "Lapis Hoe"));
 	new ToolSet(lapispic,lapisaxe,lapis_sword,lapis_shovel,lapishoe,new ItemStack(Blocks.LAPIS_BLOCK),new ItemStack(Items.STICK),false,false);
 	  
-	quartzpic = new ItemBasicPickaxe(new ResourceLocation(modid + ":" + "quartz_pickaxe"),quartz_material,CreativeTabs.TOOLS,new LangEntry("en_us", "Quartz Pickaxe"));
-	quartzaxe = new ItemBasicAxe(new ResourceLocation(modid + ":" + "quartz_axe"),quartz_material,CreativeTabs.TOOLS,new LangEntry("en_us","Quartz Axe"));
-	quartzsword = new ItemBasicSword(new ResourceLocation(modid + ":" + "quartz_sword"),quartz_material,CreativeTabs.TOOLS,new LangEntry("en_us","Quartz Sword"));
-	quartzshovel = new ItemBasicSpade(new ResourceLocation(modid + ":" + "quartz_spade"),quartz_material,CreativeTabs.TOOLS,new LangEntry("en_us","Quartz Shovel"));
-	quartzhoe = new ItemBasicHoe(new ResourceLocation(modid + ":" + "quartz_hoe"),quartz_material,CreativeTabs.TOOLS,new LangEntry("en_us","Quartz Hoe"));
+	quartzpic = new BasicPickaxe(new ResourceLocation(modid + ":" + "quartz_pickaxe"),quartz_material,CreativeTabs.TOOLS,new LangEntry("en_us", "Quartz Pickaxe"));
+	quartzaxe = new BasicAxe(new ResourceLocation(modid + ":" + "quartz_axe"),quartz_material,CreativeTabs.TOOLS,new LangEntry("en_us","Quartz Axe"));
+	quartzsword = new BasicSword(new ResourceLocation(modid + ":" + "quartz_sword"),quartz_material,CreativeTabs.TOOLS,new LangEntry("en_us","Quartz Sword"));
+	quartzshovel = new BasicSpade(new ResourceLocation(modid + ":" + "quartz_spade"),quartz_material,CreativeTabs.TOOLS,new LangEntry("en_us","Quartz Shovel"));
+	quartzhoe = new BasicHoe(new ResourceLocation(modid + ":" + "quartz_hoe"),quartz_material,CreativeTabs.TOOLS,new LangEntry("en_us","Quartz Hoe"));
 	new ToolSet(quartzpic,quartzaxe,quartzsword,quartzshovel,quartzhoe,new ItemStack(Blocks.QUARTZ_BLOCK),new ItemStack(Items.STICK),true,false);
 	
 	//armor
